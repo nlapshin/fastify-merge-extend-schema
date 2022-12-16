@@ -1,0 +1,13 @@
+pre-push:
+  commands:
+    packages-audit:
+      tags: package security
+      run: npm audit
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      run: npm run lint
+    test:
+      run: npm test
